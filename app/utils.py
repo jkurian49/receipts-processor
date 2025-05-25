@@ -37,3 +37,14 @@ def calculate_time_points(purchase_time: str) -> int:
     if lower_bound < total_minutes < upper_bound:
         points += TIME_BONUS
     return points
+
+def calculate_points(receipt: dict) -> int:
+    points: int = 0
+
+    points += calculate_retailer_points(receipt['retailer'])
+    points += calculate_total_points(receipt['total'])
+    points += calculate_items_points(receipt['items'])
+    points += calculate_day_points(receipt['purchaseDate'])
+    points += calculate_time_points(receipt['purchaseTime'])
+
+    return points

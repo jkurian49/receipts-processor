@@ -36,17 +36,6 @@ def process() -> Any:
     logger.info(f"Processed receipt. ID: {new_id}, Points: {points}")
     return jsonify({'id': new_id})
 
-def calculate_points(receipt: dict) -> int:
-    points: int = 0
-
-    points += calculate_retailer_points(receipt['retailer'])
-    points += calculate_total_points(receipt['total'])
-    points += calculate_items_points(receipt['items'])
-    points += calculate_day_points(receipt['purchaseDate'])
-    points += calculate_time_points(receipt['purchaseTime'])
-
-    return points
-
 @bp.route('/<id>/points', methods=["GET"])
 def getPoints(id: str) -> Any:
     if id not in receipt_points:
