@@ -1,0 +1,4 @@
+Flask
+jsonschema
+pytest
+pytest-flask
