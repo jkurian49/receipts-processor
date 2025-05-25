@@ -16,7 +16,7 @@ This project is intended to be run using Docker.
 1. **Clone the repository:**
 
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/jkurian49/receipts-processor.git
    cd receipt-processor
    ```
 
